@@ -1,0 +1,16 @@
+= form_tag(tags_settings_path, method: 'post', class: 'control is-grouped') do
+  .control.is-expanded
+    input.input(type="text" name="name" placeholder="ニコニコ動画のタグを入力")
+  .controll
+    button.button.is-primary 追加
+
+- @tags.each do |tag|
+  .card
+    .card-content
+      .media
+        .media-content
+          .content
+            p
+              strong= tag.name
+    .card-footer
+      a.card-footer-item(href="#{tags_settings_path}/#{tag.name}" data-method="delete") 削除

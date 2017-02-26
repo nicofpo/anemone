@@ -1,0 +1,22 @@
+= form_tag(users_settings_path, method: 'post', class: 'control is-grouped') do
+  .control.is-expanded
+    input.input(type="text" name="nid" placeholder="ニコニコ動画ユーザー ID を入力")
+  .controll
+    button.button.is-primary 追加
+
+- @users.each do |user|
+  .card
+    .card-content
+      .media
+        .media-left
+          figure.image
+            img(src="#{user.icon_url}")
+
+        .media-content
+          .content
+            p
+              strong= user.nickname
+            p ID: #{user.nid}
+    .card-footer
+      a.card-footer-item(href="http://www.nicovideo.jp/user/#{user.nid}") ニコ動プロフィール
+      a.card-footer-item(href="#{users_settings_path}/#{user.nid}" data-method="delete") 削除

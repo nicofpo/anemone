@@ -1,0 +1,27 @@
+doctype 5
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  body
+    = render 'peek/bar'
+
+    #anemone
+      nav.nav
+        .container
+          .nav-left
+            a.nav-item(href="/") ニコニコ定点観測機
+            a.nav-item.is-tab(href="/about") #とは
+
+          .nav-right
+            - if logged_in?
+              a.nav-item.is-tab(href=logout_path data-method="delete") ログアウト
+            - else
+
+      .section
+        .container
+          = content_for?(:body) ? yield(:body) : yield

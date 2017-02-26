@@ -1,0 +1,16 @@
+- @videos.preload(:tags).each do |video|
+  a.box(href="#{video.url}")
+    .media
+      .media-left
+        figure.image
+          img(src="#{video.thumbnail_url}")
+      .media-content
+        .content
+          h5
+            strong= video.title
+          p= video.description
+          .tags
+            - video.tags.each do |tag|
+              span.tag.is-dark
+                = tag.name
+

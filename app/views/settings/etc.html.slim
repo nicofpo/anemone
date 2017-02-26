@@ -1,0 +1,11 @@
+h1.title アカウントの削除
+
+
+.columns
+  .column
+    .notification
+      p アカウントの削除実行後、アカウントを復旧する手段は一切提供されていません。
+
+  .column
+    p
+      a.button.is-danger.is-fullwidth.is-outlined.is-medium(href="#{user_path(current_user)}" data-method="delete" data-confirm="いかなる方法を持ってしてもアカウントの復旧はおこなえませんが、よろしいですか？") アカウントを完全に削除

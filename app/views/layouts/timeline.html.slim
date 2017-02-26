@@ -1,0 +1,39 @@
+- content_for(:body) do
+  .columns
+    .column.is-one-third
+      nav.panel
+        h2.panel-heading 新着動画
+
+        a.panel-block(href=users_timeline_path class="#{inside?('timeline', 'users') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('user')
+          | 観測ユーザー
+        a.panel-block(href=tags_timeline_path class="#{inside?('timeline', 'tags') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('tag')
+          | 観測タグ
+        a.panel-block(href=all_timeline_path class="#{inside?('timeline', 'all') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('globe')
+          | とにかく全部
+
+      nav.panel
+        h2.panel-heading 設定
+
+        a.panel-block(href="#{users_settings_path}" class="#{inside?('settings', 'users') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('users')
+          | 観測ユーザーの管理
+        a.panel-block(href="#{tags_settings_path}" class="#{inside?('settings', 'tags') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('tags')
+          | 観測タグの管理
+        a.panel-block(href="#{etc_settings_path}" class="#{inside?('settings', 'etc') ? 'is-active' : ''}")
+          span.panel-icon
+            = fa_icon('cogs')
+          | その他の設定
+
+    .column.is-two-third
+      = yield
+
+= render template: 'layouts/application'

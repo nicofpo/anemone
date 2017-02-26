@@ -7,11 +7,25 @@ end
 
 gem 'rails', '~> 5.0.1'
 
+gem 'font-awesome-rails'
+gem 'hiredis'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'peek'
+gem 'peek-git'
+gem 'peek-host'
+gem 'peek-mysql2'
+gem 'peek-performance_bar'
+gem 'peek-sidekiq'
 gem 'puma', '~> 3.0'
+gem 'redis'
 gem 'sass-rails', '~> 5.0'
+gem 'settingslogic'
+gem 'sidekiq'
+gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
