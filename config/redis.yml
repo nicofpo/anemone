@@ -11,3 +11,4 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['REDIS_URL'] %>
