@@ -18,6 +18,9 @@ require 'sprockets/railtie'
 Bundler.require(*Rails.groups)
 
 module Anemone
+  def self.ga_tracking_id
+    @ga_tracking_id ||= ENV['GA_TRACKING_ID'].to_s
+  end
 end
 
 class Anemone::Application < Rails::Application
