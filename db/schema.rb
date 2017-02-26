@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20170225235504) do
 
   create_table "nico_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
-    t.string   "name",                    collation: "utf8mb4_bin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 40,              collation: "utf8mb4_bin"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.index ["name"], name: "index_nico_tags_on_name", unique: true, using: :btree
   end
 
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20170225235504) do
   end
 
   create_table "user_nico_user_followings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
-    t.integer  "user_id"
-    t.integer  "nico_user_id"
+    t.integer  "user_id",      null: false
+    t.integer  "nico_user_id", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["nico_user_id"], name: "index_user_nico_user_followings_on_nico_user_id", using: :btree

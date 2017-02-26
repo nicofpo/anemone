@@ -2,7 +2,7 @@
 class CreateNicoTags < ActiveRecord::Migration[5.0]
   def change
     create_table :nico_tags do |t|
-      t.string :name, charset: 'utf8mb4', collation: 'utf8mb4_bin'
+      t.string :name, limit: 40, charset: 'utf8mb4', collation: 'utf8mb4_bin'
 
       t.timestamps null: false
     end
