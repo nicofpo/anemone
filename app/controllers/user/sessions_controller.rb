@@ -6,7 +6,7 @@ class User::SessionsController < ApplicationController
 
     self.current_user = ext_auth.user
 
-    redirect_to root_path
+    redirect_to users_timeline_path
   end
 
   def destroy

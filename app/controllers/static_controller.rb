@@ -1,5 +1,8 @@
 class StaticController < ApplicationController
   def top_page
-    Nico::User.all.to_a
+    @videos = Nico::Video.order(id: :desc).limit(10)
+  end
+
+  def about
   end
 end

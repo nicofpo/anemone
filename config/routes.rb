@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Peek::Railtie => '/peek'
 
   root to: 'static#top_page'
+  get '/about', to: 'static#about'
 
   get '/auth/:provider/callback', :to => 'user/sessions#callback'
   post '/auth/:provider/callback', :to => 'user/sessions#callback'

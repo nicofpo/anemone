@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: anemone_production
-  username: anemone
-  password: <%= ENV['ANEMONE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

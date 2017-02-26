@@ -61,6 +61,6 @@ module Sessionable
   end
 
   def required_login
-    redirect_to root_path
+    redirect_to root_path if logged_out?
   end
 end

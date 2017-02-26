@@ -3,6 +3,7 @@ html
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title ニコニコ定点観測機
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -19,8 +20,10 @@ html
 
           .nav-right
             - if logged_in?
+              a.nav-item.is-tab(href=users_timeline_path) 新着動画を見る
               a.nav-item.is-tab(href=logout_path data-method="delete") ログアウト
             - else
+              a.nav-item.is-tab(href="/auth/twitter") Twitter でログイン
 
       .section
         .container

@@ -1,53 +1,12 @@
-.section
-  .container
+.hero
+  .hero-body
+    h1.title ニコニコ定点観測機
+    h2.subtitle 特定ユーザー、特定タグの動画をいっぱいおっかけるよ
+
     .content
-      h1 ニコニコ定点観測機
+      p うまれたばっかりだからやさしくしてね。詳しい説明は <a href="/about">#とは</a> にまとまってるよ。
 
-      p 特定タグ、特定ユーザーの動画投稿「だけ」を徹底的に追い続けるためのツールです。
-      p Twitter アカウントで認証して使えます。
+      p
+        a.button.is-info.is-large(href="/auth/twitter") いますぐ登録しよう！
 
-      h3 Q&A
-
-      .columns
-        .column
-          .message
-            .message-header Q: なんで Twitter 認証なの？
-            .message-body
-              p いちいちメールアドレス集めてパスワード管理して……ってしたくなかったからだよ。
-
-          .message
-            .message-header Q: 無料で使える？
-            .message-body
-              p 今のところ無料で使えるよ。たくさん人が使うようになったら、たぶん広告がいっぱい画面に増えるけど、その時は許して欲しいな。
-              p 初期登録500人くらいまでの人の画面にはずっと広告が出ないようにするつもりだよ。
-              p ほんとに人がたくさん使い始めちゃったらもしかしたらお金くださいするかもしれないけど、それも許して欲しいな。
-
-          .message
-            .message-header Q: なんで作ったの？
-            .message-body
-              p みんな欲しいんじゃないかなって思ったんだけど、いらなかったらごめんなさいだね。
-
-        .column
-          .message
-            .message-header Q: Twitter で勝手に書き込んだりする？
-            .message-body
-              p 書き込みに必要な権限はもらわないようにしてるよ。書き込めないよ。
-              p タイムラインは見ようと思えば見れるかもしれないけど、登録のときもらった秘密のパスワードは保存せずに捨ててるよ。後から取り出すのは難しいから大丈夫だと思う。
-
-          .message
-            .message-header Q: どんな時にサービスが終るの？
-            .message-body
-              p ニコレポに『動画投稿のニコレポのみ』って絞込りオプションが出来たらたぶんやめるよ。
-
-          .message
-            .message-header Q: ニコ定くんが信用できないから自分で動かしたい
-            .message-body
-              p ぎっとはぶってところでプログラムを公開してるよ。興味があったら動かしてみてね。
-              p <a href="https://github.com/nicofpo">ニコ定くんぎっとはぶ</a>
-
-          .message
-            .message-header Q: 作って欲しい機能がある
-            .message-body
-              p ぎっとはぶで自分で実装して送ってくれれば運用するよ。
-              p それ以外のご意見は <a href="https://twitter.com/nicofpo">@nicofpo</a> の Twitter でニコ定くんが受け付けたり受け付けなかったりしてるよ。
-              p どうしても欲しい機能があったら、すごく頑張ってお願いするか、ニコ定くんにビールを飲ませるとたぶん作るよ。
+= render template: 'timeline/videos'
