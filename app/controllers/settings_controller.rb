@@ -7,8 +7,11 @@ class SettingsController < ApplicationController
   end
 
   def add_user
-    nuser = Nico::User.register('id' => params[:nid].to_i.to_s)
-    current_user.following_nico_users << nuser
+    nids = params[:nids].to_s.split(/[^0-9]+/).map(&:strip)
+    nids.each do |nid|
+      nuser = Nico::User.register('id' => nid.to_i.to_s)
+      current_user.following_nico_users << nuser
+    end
     @users = current_user.following_nico_users
 
     render :users
