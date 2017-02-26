@@ -48,5 +48,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] || ENV['CLEARDB_DATABASE_URL'].to_s.sub(/^mysql\//, 'mysql2').presence %>
+  url: <%= ENV['DATABASE_URL'] || ENV['CLEARDB_DATABASE_URL'].to_s.sub(/^mysql:/, 'mysql2:').presence %>
+  encoding: utf8mb4
+  pool: 5
